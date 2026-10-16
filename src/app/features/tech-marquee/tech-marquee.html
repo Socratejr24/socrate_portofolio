@@ -1,0 +1,61 @@
+<section
+  class="relative overflow-hidden border-y border-[var(--color-border)]
+         bg-[var(--color-surface)] py-6"
+>
+  <!-- Fade sur les côtés -->
+  <div
+    class="pointer-events-none absolute left-0 top-0 z-10 h-full w-24
+           bg-gradient-to-r from-[var(--color-surface)] to-transparent"
+  ></div>
+  <div
+    class="pointer-events-none absolute right-0 top-0 z-10 h-full w-24
+           bg-gradient-to-l from-[var(--color-surface)] to-transparent"
+  ></div>
+
+  <!-- Contrôles direction -->
+  <div class="absolute right-4 top-1/2 z-20 flex -translate-y-1/2 gap-1">
+    <!-- <button
+      type="button"
+      (click)="setDirection(-1)"
+      [class.text-[var(--color-primary)]]="direction() === -1"
+      aria-label="Faire reculer"
+      class="flex h-8 w-8 items-center justify-center rounded-full border
+             border-[var(--color-border)] bg-[var(--color-bg)]
+             text-[var(--color-text-muted)] transition hover:text-[var(--color-primary)]"
+    >
+      ◀
+    </button> -->
+    <!-- <button
+      type="button"
+      (click)="setDirection(1)"
+      [class.text-[var(--color-primary)]]="direction() === 1"
+      aria-label="Faire avancer"
+      class="flex h-8 w-8 items-center justify-center rounded-full border
+             border-[var(--color-border)] bg-[var(--color-bg)]
+             text-[var(--color-text-muted)] transition hover:text-[var(--color-primary)]"
+    >
+      ▶
+    </button> -->
+  </div>
+
+  <!-- Marquee -->
+  <div
+    (mouseenter)="onMouseEnter()"
+    (mouseleave)="onMouseLeave()"
+    class="flex w-max gap-4"
+    [class.animate-marquee-right]="direction() === 1"
+    [class.animate-marquee-left]="direction() === -1"
+    [style.animation-play-state]="isPaused() ? 'paused' : 'running'"
+  >
+    @for (tech of duplicatedTechs; track $index) {
+      <div
+        class="flex items-center gap-2 whitespace-nowrap rounded-lg border
+               border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-2
+               text-sm font-medium text-[var(--color-text-muted)]"
+      >
+        <ng-icon [name]="tech.icon" size="18" />
+        <span>{{ tech.label }}</span>
+      </div>
+    }
+  </div>
+</section>

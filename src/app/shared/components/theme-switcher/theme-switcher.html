@@ -1,0 +1,37 @@
+<div class="relative">
+  <button
+    type="button"
+    (click)="toggle()"
+    class="flex items-center gap-2 rounded-lg border border-[var(--color-border)]
+           bg-[var(--color-surface)] px-3 py-2 text-sm font-medium
+           text-[var(--color-text)] transition hover:border-[var(--color-primary)]
+           hover:text-[var(--color-primary)]"
+    aria-label="Changer le thème"
+  >
+    <ng-icon
+      [name]="themes.find(t => t.value === themeService.currentTheme())?.icon || 'lucidePalette'"
+      size="18"
+    />
+  </button>
+
+  @if (isOpen()) {
+    <div
+      class="absolute right-0 z-50 mt-2 w-44 overflow-hidden rounded-lg border
+             border-[var(--color-border)] bg-[var(--color-surface)] shadow-lg"
+    >
+      @for (theme of themes; track theme.value) {
+        <button
+          type="button"
+          (click)="select(theme.value)"
+          class="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm
+                 text-[var(--color-text)] transition
+                 hover:bg-[var(--color-bg)]"
+          [class.text-[var(--color-primary)]]="themeService.currentTheme() === theme.value"
+        >
+          <ng-icon [name]="theme.icon" size="16" />
+          <span>{{ theme.labelKey | translate }}</span>
+        </button>
+      }
+    </div>
+  }
+</div>

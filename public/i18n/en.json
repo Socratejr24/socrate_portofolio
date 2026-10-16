@@ -1,0 +1,107 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "STACK": "Stack",
+    "CAREER": "Career",
+    "EDUCATION": "Education",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact"
+  },
+  "HERO": {
+    "BADGE": "Open to work",
+    "GREETING": "Hi, I'm",
+    "NAME": "Ackadie Kouaho Jean-Dylane",
+    "DESCRIPTION": "Junior Full Stack Developer with a Bachelor's degree in Computer Science, passionate about designing modern and high-performance web applications.",
+    "CTA_PROJECTS": "View my projects",
+    "CTA_CONTACT": "Contact me",
+    "SCROLL": "Scroll down"
+  },
+  "STACK": {
+    "LABEL": "Stack & Expertise",
+    "TITLE": "My technical skills",
+    "SUBTITLE": "I combine a modern tech stack with proven expertise to craft clean, reliable, and future-ready solutions.",
+    "CARDS_LABEL": "Key technologies",
+    "CARDS_TITLE": "Tools I master",
+    "FRONTEND": {
+      "TITLE": "Frontend",
+      "DESC": "Modern, responsive and high-performance interfaces."
+    },
+    "BACKEND": {
+      "TITLE": "Backend",
+      "DESC": "Robust APIs and scalable server architecture."
+    },
+    "DATABASE": {
+      "TITLE": "Database",
+      "DESC": "Modeling, queries and SQL optimization."
+    },
+    "TOOLS": {
+      "TITLE": "Tools & Methods",
+      "DESC": "Work environment and best practices."
+    },
+    "TAGS": {
+      "FRONTEND": "Frontend",
+      "BACKEND": "Backend",
+      "LANGUAGE": "Language",
+      "DATABASE": "Database",
+      "TOOL": "Tool"
+    },
+    "CARDS": {
+      "ANGULAR": "Google's modern frontend framework, ideal for building robust, scalable SPAs with clean architecture.",
+      "TYPESCRIPT": "Typed superset of JavaScript that makes code safer, more readable and maintainable over time.",
+      "LARAVEL": "Elegant PHP framework that speeds up backend development with expressive syntax and powerful tools (Eloquent, Artisan, queues...).",
+      "PHP": "Proven backend language, massively used on the web, perfect for building APIs and dynamic applications.",
+      "MYSQL": "Reliable and performant relational database system, suitable for all kinds of web projects.",
+      "TAILWIND": "Utility-first CSS framework to build modern, responsive interfaces without leaving the HTML.",
+      "REACT": "Meta's JavaScript library for creating interactive interfaces based on reusable components.",
+      "GIT": "Essential versioning and collaboration tools to work cleanly in a team and track every code change."
+    }
+  },
+  "CAREER": {
+    "LABEL": "Career",
+    "TITLE": "My professional experience",
+    "SUBTITLE": "Each project has helped me strengthen my skills and discover new ways to solve real-world problems.",
+    "TYPES": {
+      "INTERNSHIP": "Internship",
+      "FULLTIME": "Full-time",
+      "FREELANCE": "Freelance"
+    },
+    "BIGDATA": {
+      "ROLE": "Full Stack Developer Intern",
+      "M1_TITLE": "Redesign of the BIGDATA CI website",
+      "M1_DESC": "Participated in redesigning the institutional website to modernize its interface, improve user experience and highlight the company's services.",
+      "M2_TITLE": "Maintenance and evolution of the website",
+      "M2_DESC": "Corrective and evolutive maintenance of the site: bug fixing, content updates and improvements to existing features.",
+      "M3_TITLE": "Development of Soul Keeper",
+      "M3_DESC": "Development of a web application to manage members, attendance and activities of a church.",
+      "M4_TITLE": "Functional application testing",
+      "M4_DESC": "Performed functional tests on Gestion Facile (business management) and Merchant Tracker (business activity tracking) applications to validate features and ensure delivery quality."
+    }
+  },
+  "EDUCATION": {
+    "LABEL": "Education",
+    "TITLE": "My academic background",
+    "SUBTITLE": "A strong foundation in computer science, complemented by constant curiosity and daily coding practice.",
+    "SUBJECTS": "Key subjects",
+    "LICENSE": {
+      "DEGREE": "Bachelor's Degree in Computer Science",
+      "FIELD": "Application Development",
+      "LOCATION": "Abidjan, Ivory Coast"
+    },
+    "BACC": {
+      "DEGREE": "High School Diploma - Science Track",
+      "LOCATION": "Gagnoa, Ivory Coast"
+    }
+  },
+  "THEME": {
+    "LABEL": "Theme",
+    "LIGHT": "Light",
+    "DARK": "Dark",
+    "AQUA": "Aqua",
+    "RETRO": "Retro"
+  },
+  "LANG": {
+    "LABEL": "Language",
+    "FR": "French",
+    "EN": "English"
+  }
+}

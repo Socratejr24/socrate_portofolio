@@ -1,0 +1,10 @@
+<button
+  type="button"
+  (click)="langService.toggleLang()"
+  class="flex items-center gap-2 rounded-lg border border-[var(--color-border)]
+         bg-[var(--color-surface)] px-3 py-2 text-sm font-semibold uppercase
+         text-[var(--color-text)] transition hover:border-[var(--color-primary)]
+         hover:text-[var(--color-primary)]"
+>
+  {{ langService.currentLang() }}
+</button>

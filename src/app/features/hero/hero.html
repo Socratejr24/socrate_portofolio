@@ -1,0 +1,161 @@
+<section
+  id="home"
+  [attr.data-lang]="currentLang()"
+  class="relative flex min-h-screen items-center overflow-hidden px-6 pt-24 pb-16"
+>
+  <!-- ===== HALOS LUMINEUX (background) ===== -->
+  <div
+    class="pointer-events-none absolute top-1/4 -left-40 h-96 w-96 rounded-full
+           bg-[var(--color-primary)] opacity-20 blur-[120px]"
+  ></div>
+  <div
+    class="pointer-events-none absolute bottom-0 -right-40 h-96 w-96 rounded-full
+           bg-[var(--color-primary)] opacity-10 blur-[120px]"
+  ></div>
+
+  <!-- ===== GRILLE DE FOND ===== -->
+  <div
+    class="pointer-events-none absolute inset-0 opacity-[0.04]"
+    style="background-image: linear-gradient(var(--color-text) 1px, transparent 1px),
+                              linear-gradient(90deg, var(--color-text) 1px, transparent 1px);
+           background-size: 40px 40px;"
+  ></div>
+
+  <!-- ===== CONTENU ===== -->
+  <div class="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-2">
+    <!-- === COLONNE GAUCHE : TEXTE === -->
+    <div class="flex flex-col items-start gap-6">
+      <!-- Badge "Disponible" -->
+      <div
+        class="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)]
+               bg-[var(--color-surface)] px-4 py-1.5 text-sm font-medium
+               text-[var(--color-text-muted)]"
+      >
+        <span class="relative flex h-2 w-2">
+          <span
+            class="absolute inline-flex h-full w-full animate-ping rounded-full
+                   bg-green-400 opacity-75"
+          ></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+        </span>
+        {{ 'HERO.BADGE' | translate }}
+      </div>
+
+      <!-- Salutation + Nom -->
+      <div>
+        <p class="text-lg font-medium text-[var(--color-text-muted)]">
+          {{ 'HERO.GREETING' | translate }}
+        </p>
+        <h1
+          class="mt-2 text-4xl font-extrabold tracking-tight text-[var(--color-text)]
+                 sm:text-5xl lg:text-6xl"
+        >
+          {{ 'HERO.NAME' | translate }}
+        </h1>
+      </div>
+
+      <!-- Typing effect -->
+      <div
+        class="text-2xl font-bold text-[var(--color-primary)] sm:text-3xl lg:text-4xl
+               min-h-[2.5rem]"
+      >
+        <app-typing-effect [words]="roles" />
+      </div>
+
+      <!-- Description -->
+      <p
+        class="max-w-xl text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg"
+      >
+        {{ 'HERO.DESCRIPTION' | translate }}
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap items-center gap-4">
+        <a
+          href="#projects"
+          class="group inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary)]
+                 px-6 py-3 text-sm font-semibold text-white transition
+                 hover:bg-[var(--color-primary-hover)]"
+        >
+          {{ 'HERO.CTA_PROJECTS' | translate }}
+          <ng-icon
+            name="lucideArrowRight"
+            size="18"
+            class="transition-transform group-hover:translate-x-1"
+          />
+        </a>
+
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)]
+                 bg-[var(--color-surface)] px-6 py-3 text-sm font-semibold
+                 text-[var(--color-text)] transition hover:border-[var(--color-primary)]
+                 hover:text-[var(--color-primary)]"
+        >
+          {{ 'HERO.CTA_CONTACT' | translate }}
+        </a>
+      </div>
+
+      <!-- Socials -->
+      <div class="flex items-center gap-3 pt-2">
+        @for (social of socials; track social.label) {
+          <a
+            [href]="social.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="social.label"
+            class="flex h-10 w-10 items-center justify-center rounded-lg border
+                   border-[var(--color-border)] bg-[var(--color-surface)]
+                   text-[var(--color-text-muted)] transition
+                   hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+          >
+            @if (social.icon === 'lucideLinkedin') {
+              <app-icon-linkedin [size]="18" />
+            } @else {
+              <ng-icon [name]="social.icon" size="18" />
+            }
+          </a>
+        }
+      </div>
+    </div>
+
+    <!-- === COLONNE DROITE : PHOTO === -->
+    <div class="relative flex justify-center lg:justify-end">
+      <div class="relative">
+        <!-- Cercle décoratif animé -->
+        <div
+          class="absolute inset-0 -m-4 rounded-full border-2 border-dashed
+                 border-[var(--color-primary)] opacity-30 animate-[spin_20s_linear_infinite]"
+        ></div>
+
+        <!-- Halo derrière la photo -->
+        <div
+          class="absolute inset-0 rounded-full bg-[var(--color-primary)] opacity-20 blur-3xl"
+        ></div>
+
+        <!-- Photo -->
+        <img
+          src="/profile.png"
+          alt="Ackadie Kouaho Jean-Dylane"
+          class="relative h-64 w-64 rounded-full border-4 border-[var(--color-primary)]
+                 object-cover shadow-2xl sm:h-80 sm:w-80 lg:h-96 lg:w-96"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCROLL INDICATOR ===== -->
+  <a
+    href="#stack"
+    class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2
+           text-[var(--color-text-muted)] transition hover:text-[var(--color-primary)] md:flex"
+    [attr.aria-label]="'HERO.SCROLL' | translate"
+  >
+    <span class="text-xs uppercase tracking-widest">
+      {{ 'HERO.SCROLL' | translate }}
+    </span>
+    <div class="flex h-10 w-6 justify-center rounded-full border-2 border-current pt-2">
+      <div class="h-2 w-1 animate-bounce rounded-full bg-current"></div>
+    </div>
+  </a>
+</section>

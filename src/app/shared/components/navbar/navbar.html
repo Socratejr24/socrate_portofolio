@@ -1,0 +1,68 @@
+<header
+  [attr.data-lang]="currentLang()"
+  [class.-translate-y-full]="isHidden()"
+  class="fixed top-0 left-0 right-0 z-50 border-b border-[var(--color-border)]
+         bg-[var(--color-bg)]/80 backdrop-blur-md transition-transform duration-300"
+>
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+    <!-- Logo -->
+    <a
+      href="#home"
+      class="text-xl font-bold text-[var(--color-text)] transition hover:text-[var(--color-primary)]"
+    >
+      &lt;Dylane /&gt;
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="hidden items-center gap-8 md:flex">
+      @for (item of navItems; track item.anchor) {
+        <li>
+          <a
+            [href]="'#' + item.anchor"
+            class="text-sm font-medium text-[var(--color-text-muted)] transition
+                   hover:text-[var(--color-primary)]"
+          >
+            {{ item.labelKey | translate }}
+          </a>
+        </li>
+      }
+    </ul>
+
+    <!-- Right side -->
+    <div class="flex items-center gap-2">
+      <app-lang-switcher />
+      <app-theme-switcher />
+
+      <!-- Mobile menu toggle -->
+      <button
+        type="button"
+        (click)="toggleMobileMenu()"
+        class="flex items-center rounded-lg border border-[var(--color-border)]
+               bg-[var(--color-surface)] p-2 text-[var(--color-text)] md:hidden"
+        aria-label="Menu"
+      >
+        <ng-icon [name]="isMobileMenuOpen() ? 'lucideX' : 'lucideMenu'" size="20" />
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  @if (isMobileMenuOpen()) {
+    <div class="border-t border-[var(--color-border)] bg-[var(--color-surface)] md:hidden">
+      <ul class="flex flex-col px-6 py-4">
+        @for (item of navItems; track item.anchor) {
+          <li>
+            <a
+              [href]="'#' + item.anchor"
+              (click)="closeMobileMenu()"
+              class="block py-3 text-sm font-medium text-[var(--color-text-muted)]
+                     transition hover:text-[var(--color-primary)]"
+            >
+              {{ item.labelKey | translate }}
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  }
+</header>

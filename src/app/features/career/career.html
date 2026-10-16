@@ -1,0 +1,125 @@
+<section
+  id="career"
+  [attr.data-lang]="currentLang()"
+  class="relative px-6 py-24 sm:py-32"
+>
+  <div class="mx-auto max-w-5xl">
+    <!-- ===== HEADER ===== -->
+    <div class="mb-16 text-center">
+      <p class="mb-3 font-mono text-sm font-medium text-[var(--color-primary)]">
+        // {{ 'CAREER.LABEL' | translate }}
+      </p>
+      <h2 class="text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl lg:text-5xl">
+        {{ 'CAREER.TITLE' | translate }}
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-base text-[var(--color-text-muted)] sm:text-lg">
+        {{ 'CAREER.SUBTITLE' | translate }}
+      </p>
+    </div>
+
+    <!-- ===== TIMELINE ===== -->
+    <div class="relative">
+      @for (exp of experiences; track exp.company) {
+        <!-- Ligne verticale -->
+        <div
+          class="absolute left-4 top-0 h-full w-0.5 bg-[var(--color-border)] sm:left-1/2
+                 sm:-translate-x-1/2"
+        ></div>
+
+        <div class="relative pl-12 sm:pl-0">
+          <!-- Point sur la timeline -->
+          <div
+            class="absolute left-4 top-2 z-10 flex h-4 w-4 -translate-x-1/2 items-center
+                   justify-center rounded-full border-2 border-[var(--color-primary)]
+                   bg-[var(--color-bg)] sm:left-1/2"
+          >
+            <div class="h-1.5 w-1.5 rounded-full bg-[var(--color-primary)]"></div>
+          </div>
+
+          <!-- Carte expérience -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-[var(--color-border)]
+                   bg-[var(--color-surface)] p-6 transition
+                   hover:border-[var(--color-primary)] hover:shadow-lg sm:p-8"
+          >
+            <!-- Halo au survol -->
+            <div
+              class="pointer-events-none absolute -top-20 -right-20 h-40 w-40 rounded-full
+                     bg-[var(--color-primary)] opacity-0 blur-3xl transition-opacity
+                     duration-500 group-hover:opacity-20"
+            ></div>
+
+            <div class="relative">
+              <!-- Header -->
+              <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 class="text-xl font-bold text-[var(--color-text)]">
+                    {{ exp.roleKey | translate }}
+                  </h3>
+                  <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+                    <span class="font-semibold text-[var(--color-primary)]">
+                      {{ exp.company }}
+                    </span>
+                    <span class="text-[var(--color-text-muted)]">·</span>
+                    <span class="flex items-center gap-1 text-[var(--color-text-muted)]">
+                      <ng-icon name="lucideMapPin" size="14" />
+                      {{ exp.location }}
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Type + Période -->
+                <div class="flex flex-col items-start gap-2 sm:items-end">
+                  <span
+                    class="rounded-full border border-[var(--color-primary)]/30
+                           bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold
+                           uppercase tracking-wide text-[var(--color-primary)]"
+                  >
+                    {{ exp.typeKey | translate }}
+                  </span>
+                  <span class="text-xs font-medium text-[var(--color-text-muted)]">
+                    {{ exp.period }}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Missions -->
+              <div class="space-y-5">
+                @for (mission of exp.missions; track mission.titleKey) {
+                  <div
+                    class="rounded-lg border border-[var(--color-border)]
+                           bg-[var(--color-bg)]/50 p-4"
+                  >
+                    <!-- Titre mission -->
+                    <h4 class="mb-2 flex items-start gap-2 text-sm font-semibold text-[var(--color-text)]">
+                      <span class="mt-0.5 text-[var(--color-primary)]">▸</span>
+                      <span>{{ mission.titleKey | translate }}</span>
+                    </h4>
+
+                    <!-- Description -->
+                    <p class="mb-3 pl-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                      {{ mission.descKey | translate }}
+                    </p>
+
+                    <!-- Techs -->
+                    <div class="flex flex-wrap gap-1.5 pl-4">
+                      @for (tech of mission.techs; track tech) {
+                        <span
+                          class="rounded-md border border-[var(--color-border)]
+                                 bg-[var(--color-surface)] px-2 py-0.5 text-[11px]
+                                 font-medium text-[var(--color-text-muted)]"
+                        >
+                          {{ tech }}
+                        </span>
+                      }
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

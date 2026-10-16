@@ -1,0 +1,50 @@
+<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+  @for (card of cards; track card.name) {
+    <div
+      class="group relative overflow-hidden rounded-xl border border-[var(--color-border)]
+             bg-[var(--color-surface)] p-6 transition
+             hover:-translate-y-1 hover:border-[var(--color-primary)]
+             hover:shadow-lg"
+    >
+      <!-- Halo au survol -->
+      <div
+        class="pointer-events-none absolute -top-16 -right-16 h-32 w-32 rounded-full
+               bg-[var(--color-primary)] opacity-0 blur-3xl transition-opacity
+               duration-500 group-hover:opacity-20"
+      ></div>
+
+      <div class="relative flex h-full flex-col">
+        <!-- Header : icône + nom + tag -->
+        <div class="mb-4 flex items-start justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <!-- Icône -->
+            <div
+              class="flex h-11 w-11 items-center justify-center rounded-lg
+                     bg-[var(--color-bg)] text-[var(--color-primary)]"
+            >
+              <ng-icon [name]="card.icon" size="24" />
+            </div>
+
+            <!-- Nom -->
+            <h3 class="text-base font-semibold text-[var(--color-text)]">
+              {{ card.name }}
+            </h3>
+          </div>
+
+          <!-- Tag -->
+          <span
+            class="rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase
+                   tracking-wide {{ card.tagColor }}"
+          >
+            {{ card.tagKey | translate }}
+          </span>
+        </div>
+
+        <!-- Description -->
+        <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">
+          {{ card.descKey | translate }}
+        </p>
+      </div>
+    </div>
+  }
+</div>

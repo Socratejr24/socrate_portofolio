@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+/* Sur mobile : padding à gauche pour la timeline */
+@media (max-width: 767px) {
+  .relative {
+    padding-left: 1.5rem;
+  }
+}

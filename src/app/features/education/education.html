@@ -1,0 +1,133 @@
+<section
+  id="education"
+  [attr.data-lang]="currentLang()"
+  class="relative px-6 py-24 sm:py-32"
+>
+  <div class="mx-auto max-w-5xl">
+    <!-- ===== HEADER ===== -->
+    <div appReveal class="mb-20 text-center">
+      <p class="mb-3 font-mono text-sm font-medium text-[var(--color-primary)]">
+        // {{ 'EDUCATION.LABEL' | translate }}
+      </p>
+      <h2 class="text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl lg:text-5xl">
+        {{ 'EDUCATION.TITLE' | translate }}
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-base text-[var(--color-text-muted)] sm:text-lg">
+        {{ 'EDUCATION.SUBTITLE' | translate }}
+      </p>
+    </div>
+
+    <!-- ===== TIMELINE ZIGZAG ===== -->
+    <div class="relative">
+      <!-- Ligne verticale (desktop) -->
+      <div
+        class="absolute left-1/2 top-0 hidden h-full w-0.5 -translate-x-1/2
+               bg-[var(--color-border)] md:block"
+      ></div>
+
+      @for (edu of educations; track edu.school; let i = $index) {
+        <div
+          appReveal
+          [appRevealDelay]="i * 150"
+          [appRevealFrom]="edu.side === 'left' ? 'left' : 'right'"
+          class="relative mb-12 last:mb-0 md:grid md:grid-cols-2 md:gap-12"
+        >
+          <!-- === CARTE === -->
+          <div
+            [class.md:col-start-1]="edu.side === 'left'"
+            [class.md:col-start-2]="edu.side === 'right'"
+            class="group relative"
+          >
+            <div
+              class="relative overflow-hidden rounded-xl border border-[var(--color-border)]
+                     bg-[var(--color-surface)] p-6 transition
+                     hover:border-[var(--color-primary)] hover:shadow-lg"
+            >
+              <!-- Halo au survol -->
+              <div
+                class="pointer-events-none absolute -top-20 -right-20 h-40 w-40 rounded-full
+                       bg-[var(--color-primary)] opacity-0 blur-3xl transition-opacity
+                       duration-500 group-hover:opacity-20"
+              ></div>
+
+              <div class="relative flex flex-col gap-4">
+                <!-- Header : logo + période -->
+                <div class="flex items-start justify-between gap-4">
+                  <img
+                    [src]="edu.logo"
+                    [alt]="edu.school"
+                    class="h-14 w-14 rounded-lg border border-[var(--color-border)]
+                           bg-white object-contain p-1"
+                  />
+                  <span
+                    class="shrink-0 rounded-full border border-[var(--color-primary)]/30
+                           bg-[var(--color-primary)]/10 px-3 py-1 text-xs font-semibold
+                           text-[var(--color-primary)]"
+                  >
+                    {{ edu.period }}
+                  </span>
+                </div>
+
+                <!-- Diplôme -->
+                <div>
+                  <h3 class="text-lg font-bold text-[var(--color-text)] sm:text-xl">
+                    {{ edu.degreeKey | translate }}
+                  </h3>
+                  @if (edu.fieldKey) {
+                    <p class="mt-1 text-sm font-medium text-[var(--color-primary)]">
+                      {{ edu.fieldKey | translate }}
+                    </p>
+                  }
+                </div>
+
+                <!-- Établissement + lieu -->
+                <p class="text-sm text-[var(--color-text-muted)]">
+                  <span class="font-medium text-[var(--color-text)]">{{ edu.school }}</span>
+                  · {{ edu.locationKey | translate }}
+                </p>
+
+                <!-- Matières -->
+                @if (edu.subjects.length > 0) {
+                  <div>
+                    <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
+                      {{ 'EDUCATION.SUBJECTS' | translate }}
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                      @for (subject of edu.subjects; track subject) {
+                        <span
+                          class="rounded-md border border-[var(--color-border)]
+                                 bg-[var(--color-bg)] px-2.5 py-1 text-xs
+                                 font-medium text-[var(--color-text-muted)]"
+                        >
+                          {{ subject }}
+                        </span>
+                      }
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+
+          <!-- === POINT CENTRAL (desktop) === -->
+          <div
+            class="absolute left-1/2 top-6 hidden h-4 w-4 -translate-x-1/2
+                   items-center justify-center rounded-full border-2
+                   border-[var(--color-primary)] bg-[var(--color-bg)] md:flex"
+          >
+            <div class="h-1.5 w-1.5 rounded-full bg-[var(--color-primary)]"></div>
+          </div>
+
+          <!-- === POINT LATÉRAL (mobile) === -->
+          <div
+            class="absolute -left-1 top-6 flex h-4 w-4 items-center justify-center
+                   rounded-full border-2 border-[var(--color-primary)]
+                   bg-[var(--color-bg)] md:hidden"
+          >
+            <div class="h-1.5 w-1.5 rounded-full bg-[var(--color-primary)]"></div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

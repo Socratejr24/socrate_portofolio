@@ -1,0 +1,107 @@
+{
+  "NAV": {
+    "HOME": "Accueil",
+    "STACK": "Compétences",
+    "CAREER": "Parcours",
+    "EDUCATION": "Formation",
+    "PROJECTS": "Projets",
+    "CONTACT": "Contact"
+  },
+  "HERO": {
+    "BADGE": "Disponible pour missions",
+    "GREETING": "Salut, je suis",
+    "NAME": "Ackadie Kouaho Jean-Dylane",
+    "DESCRIPTION": "Développeur Full Stack Junior, diplômé d'une Licence en Informatique, passionné par la conception d'applications web modernes et performantes.",
+    "CTA_PROJECTS": "Voir mes projets",
+    "CTA_CONTACT": "Me contacter",
+    "SCROLL": "Défiler vers le bas"
+  },
+  "STACK": {
+    "LABEL": "Stack & Expertise",
+    "TITLE": "Mes compétences techniques",
+    "SUBTITLE": "Je combine des technologies modernes et une expertise éprouvée pour créer des solutions propres, fiables et évolutives.",
+    "CARDS_LABEL": "Technologies phares",
+    "CARDS_TITLE": "Les outils que je maîtrise",
+    "FRONTEND": {
+      "TITLE": "Frontend",
+      "DESC": "Interfaces modernes, responsives et performantes."
+    },
+    "BACKEND": {
+      "TITLE": "Backend",
+      "DESC": "APIs robustes et architecture serveur scalable."
+    },
+    "DATABASE": {
+      "TITLE": "Base de données",
+      "DESC": "Modélisation, requêtes et optimisation SQL."
+    },
+    "TOOLS": {
+      "TITLE": "Outils & Méthodes",
+      "DESC": "Environnement de travail et bonnes pratiques."
+    },
+    "TAGS": {
+      "FRONTEND": "Frontend",
+      "BACKEND": "Backend",
+      "LANGUAGE": "Langage",
+      "DATABASE": "Base de données",
+      "TOOL": "Outil"
+    },
+    "CARDS": {
+      "ANGULAR": "Framework frontend moderne de Google, idéal pour construire des SPA robustes et scalables avec une architecture claire.",
+      "TYPESCRIPT": "Sur-ensemble typé de JavaScript qui rend le code plus sûr, plus lisible et plus maintenable sur le long terme.",
+      "LARAVEL": "Framework PHP élégant qui accélère le développement backend avec une syntaxe expressive et des outils puissants (Eloquent, Artisan, queues...).",
+      "PHP": "Langage backend éprouvé, massivement utilisé sur le web, parfait pour construire des APIs et des applications dynamiques.",
+      "MYSQL": "Système de gestion de base de données relationnelle fiable et performant, adapté à toutes sortes de projets web.",
+      "TAILWIND": "Framework CSS utility-first qui permet de créer des interfaces modernes et responsives sans quitter le HTML.",
+      "REACT": "Bibliothèque JavaScript de Meta pour créer des interfaces interactives basées sur des composants réutilisables.",
+      "GIT": "Outils essentiels de versioning et de collaboration pour travailler proprement en équipe et suivre chaque évolution du code."
+    }
+  },
+  "CAREER": {
+    "LABEL": "Parcours",
+    "TITLE": "Mon expérience professionnelle",
+    "SUBTITLE": "Chaque projet m'a permis de renforcer mes compétences et de découvrir de nouvelles façons de résoudre des problèmes concrets.",
+    "TYPES": {
+      "INTERNSHIP": "Stage",
+      "FULLTIME": "CDI",
+      "FREELANCE": "Freelance"
+    },
+    "BIGDATA": {
+      "ROLE": "Stagiaire Développeur Full Stack",
+      "M1_TITLE": "Refonte du site web de BIGDATA CI",
+      "M1_DESC": "Participation à la refonte du site institutionnel afin de moderniser son interface, d'améliorer l'expérience utilisateur et de valoriser les services de l'entreprise.",
+      "M2_TITLE": "Maintenance et évolution du site web",
+      "M2_DESC": "Maintenance corrective et évolutive du site : correction d'anomalies, mise à jour des contenus et amélioration des fonctionnalités existantes.",
+      "M3_TITLE": "Développement de Soul Keeper",
+      "M3_DESC": "Développement d'une application web de gestion des membres, des présences et des activités d'une église.",
+      "M4_TITLE": "Tests fonctionnels d'applications",
+      "M4_DESC": "Réalisation de tests fonctionnels sur les applications Gestion Facile (gestion commerciale) et Merchant Tracker (suivi des activités commerciales) afin de valider les fonctionnalités et assurer la qualité des livrables."
+    }
+  },
+  "EDUCATION": {
+    "LABEL": "Formation",
+    "TITLE": "Mon parcours académique",
+    "SUBTITLE": "Une base solide en informatique, complétée par une curiosité constante et une pratique quotidienne du code.",
+    "SUBJECTS": "Matières clés",
+    "LICENSE": {
+      "DEGREE": "Licence en Informatique",
+      "FIELD": "Développement d'applications",
+      "LOCATION": "Abidjan, Côte d'Ivoire"
+    },
+    "BACC": {
+      "DEGREE": "Baccalauréat Série C",
+      "LOCATION": "Gagnoa, Côte d'Ivoire"
+    }
+  },
+  "THEME": {
+    "LABEL": "Thème",
+    "LIGHT": "Clair",
+    "DARK": "Sombre",
+    "AQUA": "Aqua",
+    "RETRO": "Rétro"
+  },
+  "LANG": {
+    "LABEL": "Langue",
+    "FR": "Français",
+    "EN": "Anglais"
+  }
+}

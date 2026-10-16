@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+/* Marquee qui va de gauche à droite (avance) */
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* Marquee qui va de droite à gauche (recule) */
+@keyframes marquee-left {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-right {
+  animation: marquee-right 40s linear infinite;
+}
+
+.animate-marquee-left {
+  animation: marquee-left 40s linear infinite;
+}

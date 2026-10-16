@@ -1,0 +1,104 @@
+<section
+  id="stack"
+  [attr.data-lang]="currentLang()"
+  class="relative px-6 py-24 sm:py-32"
+>
+  <div class="mx-auto max-w-7xl">
+    <!-- ===== HEADER ===== -->
+    <div class="mb-16 text-center">
+      <p class="mb-3 font-mono text-sm font-medium text-[var(--color-primary)]">
+        // {{ 'STACK.LABEL' | translate }}
+      </p>
+      <h2 class="text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl lg:text-5xl">
+        {{ 'STACK.TITLE' | translate }}
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-base text-[var(--color-text-muted)] sm:text-lg">
+        {{ 'STACK.SUBTITLE' | translate }}
+      </p>
+    </div>
+
+    <!-- ===== CATEGORIES GRID ===== -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      @for (cat of categories; track cat.titleKey) {
+        <div
+          class="group relative overflow-hidden rounded-xl border border-[var(--color-border)]
+                 bg-[var(--color-surface)] p-6 transition
+                 hover:-translate-y-1 hover:border-[var(--color-primary)]
+                 hover:shadow-lg"
+        >
+          <!-- Halo au survol -->
+          <div
+            class="pointer-events-none absolute -top-10 -right-10 h-24 w-24 rounded-full
+                   bg-[var(--color-primary)] opacity-0 blur-3xl transition-opacity
+                   duration-500 group-hover:opacity-30"
+          ></div>
+
+          <div class="relative">
+            <!-- Icône -->
+            <div
+              class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg
+                     bg-[var(--color-primary)]/10 text-[var(--color-primary)]"
+            >
+              <ng-icon [name]="cat.icon" size="24" />
+            </div>
+
+            <!-- Titre -->
+            <h3 class="mb-2 text-lg font-semibold text-[var(--color-text)]">
+              {{ cat.titleKey | translate }}
+            </h3>
+
+            <!-- Description -->
+            <p class="mb-4 text-sm text-[var(--color-text-muted)]">
+              {{ cat.descKey | translate }}
+            </p>
+
+            <!-- Liste technos -->
+            <ul class="flex flex-wrap gap-1.5">
+              @for (tech of cat.techs; track tech) {
+                <li
+                  class="rounded-md bg-[var(--color-bg)] px-2 py-1 text-xs font-medium
+                         text-[var(--color-text-muted)]"
+                >
+                  {{ tech }}
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+
+<!-- ===== CARTES DÉTAILLÉES ===== -->
+<div class="mt-20">
+  <p class="mb-3 text-center font-mono text-sm font-medium text-[var(--color-primary)]">
+    // {{ 'STACK.CARDS_LABEL' | translate }}
+  </p>
+  <h3 class="mb-10 text-center text-2xl font-bold text-[var(--color-text)] sm:text-3xl">
+    {{ 'STACK.CARDS_TITLE' | translate }}
+  </h3>
+  <app-tech-cards />
+</div>
+
+
+    <!-- ===== BADGES SVG =====
+    <div class="mt-20">
+      <p class="mb-6 text-center text-sm font-medium text-[var(--color-text-muted)]">
+        {{ 'STACK.TECHNOS' | translate }}
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        @for (badge of badges; track badge.label) {
+          <div
+            class="flex items-center gap-2 rounded-lg border border-[var(--color-border)]
+                   bg-[var(--color-surface)] px-3 py-2 text-sm text-[var(--color-text-muted)]
+                   transition hover:border-[var(--color-primary)]
+                   hover:text-[var(--color-primary)]"
+          >
+            <ng-icon [name]="badge.icon" size="18" />
+            <span class="font-medium">{{ badge.label }}</span>
+          </div>
+        }
+      </div>
+    </div> -->
+  </div>
+</section>

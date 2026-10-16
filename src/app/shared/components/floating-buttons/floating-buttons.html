@@ -1,0 +1,66 @@
+<div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+  <!-- === THEME MENU (popup) === -->
+  @if (isThemeMenuOpen()) {
+    <div
+      class="flex flex-col gap-1 rounded-xl border border-[var(--color-border)]
+             bg-[var(--color-surface)] p-2 shadow-xl"
+    >
+      @for (theme of themes; track theme.value) {
+        <button
+          type="button"
+          (click)="selectTheme(theme.value)"
+          [style.color]="currentTheme() === theme.value ? 'var(--color-primary)' : ''"
+          class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm
+                 text-[var(--color-text)] transition hover:bg-[var(--color-bg)]"
+        >
+          <ng-icon [name]="theme.icon" size="16" />
+          <span>{{ theme.labelKey | translate }}</span>
+        </button>
+      }
+    </div>
+  }
+
+  <!-- === THEME BUTTON === -->
+  <button
+    type="button"
+    (click)="toggleThemeMenu()"
+    aria-label="Changer le thème"
+    class="flex h-12 w-12 items-center justify-center rounded-full border
+           border-[var(--color-border)] bg-[var(--color-surface)]
+           text-[var(--color-text)] shadow-lg transition
+           hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]
+           hover:scale-110"
+  >
+    <ng-icon [name]="getCurrentThemeIcon()" size="20" />
+  </button>
+
+  <!-- === LANG BUTTON === -->
+  <button
+    type="button"
+    (click)="toggleLang()"
+    aria-label="Changer la langue"
+    class="flex h-12 w-12 items-center justify-center rounded-full border
+           border-[var(--color-border)] bg-[var(--color-surface)]
+           text-sm font-bold uppercase text-[var(--color-text)] shadow-lg
+           transition hover:border-[var(--color-primary)]
+           hover:text-[var(--color-primary)] hover:scale-110"
+  >
+    {{ currentLang() }}
+  </button>
+
+  <!-- === SCROLL TO TOP === -->
+  @if (isVisible()) {
+    <button
+      type="button"
+      (click)="scrollToTop()"
+      aria-label="Remonter en haut"
+      class="flex h-12 w-12 items-center justify-center rounded-full border
+             border-[var(--color-border)] bg-[var(--color-surface)]
+             text-[var(--color-text)] shadow-lg transition
+             hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]
+             hover:scale-110 animate-[fadeIn_0.3s_ease]"
+    >
+      <ng-icon name="lucideArrowUp" size="20" />
+    </button>
+  }
+</div>
