@@ -2,6 +2,7 @@ import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { NgIcon } from '@ng-icons/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageService } from '../../core/services/language.service';
+import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 interface TechCard {
   icon: string;
@@ -14,7 +15,7 @@ interface TechCard {
 
 @Component({
   selector: 'app-tech-cards',
-  imports: [NgIcon, TranslatePipe],
+  imports: [NgIcon, TranslatePipe,RevealDirective],
   templateUrl: './tech-cards.html',
   styleUrl: './tech-cards.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -59,6 +60,13 @@ export class TechCards {
       tagColor: 'text-cyan-500 border-cyan-500/30',
       descKey: 'STACK.CARDS.MYSQL',
     },
+   {
+  icon: 'simplePostgresql',
+  name: 'PostgreSQL',
+  tagKey: 'STACK.TAGS.DATABASE',
+  tagColor: 'text-blue-600 border-blue-600/30',
+  descKey: 'STACK.CARDS.POSTGRESQL',
+},
     {
       icon: 'simpleTailwindcss',
       name: 'Tailwind CSS',

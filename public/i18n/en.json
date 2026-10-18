@@ -14,6 +14,7 @@
     "DESCRIPTION": "Junior Full Stack Developer with a Bachelor's degree in Computer Science, passionate about designing modern and high-performance web applications.",
     "CTA_PROJECTS": "View my projects",
     "CTA_CONTACT": "Contact me",
+    "DOWNLOAD_CV": "Download CV",
     "SCROLL": "Scroll down"
   },
   "STACK": {
@@ -51,6 +52,7 @@
       "LARAVEL": "Elegant PHP framework that speeds up backend development with expressive syntax and powerful tools (Eloquent, Artisan, queues...).",
       "PHP": "Proven backend language, massively used on the web, perfect for building APIs and dynamic applications.",
       "MYSQL": "Reliable and performant relational database system, suitable for all kinds of web projects.",
+      "POSTGRESQL": "Open-source relational database system, robust and powerful, ideal for demanding modern applications.",
       "TAILWIND": "Utility-first CSS framework to build modern, responsive interfaces without leaving the HTML.",
       "REACT": "Meta's JavaScript library for creating interactive interfaces based on reusable components.",
       "GIT": "Essential versioning and collaboration tools to work cleanly in a team and track every code change."

@@ -3,6 +3,8 @@ import { NgIcon } from '@ng-icons/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { TechCards } from '../tech-cards/tech-cards';
 import { LanguageService } from '../../core/services/language.service';
+import { RevealDirective } from '../../shared/directives/reveal.directive';
+
 
 interface StackCategory {
   icon: string;
@@ -18,7 +20,7 @@ interface TechBadge {
 
 @Component({
   selector: 'app-stack',
-  imports: [NgIcon, TranslatePipe,TechCards],
+  imports: [NgIcon, TranslatePipe,TechCards, RevealDirective],
   templateUrl: './stack.html',
   styleUrl: './stack.css',
 })
@@ -43,7 +45,7 @@ export class Stack {
       icon: 'lucideDatabase',
       titleKey: 'STACK.DATABASE.TITLE',
       descKey: 'STACK.DATABASE.DESC',
-      techs: ['MySQL', 'SQL', 'UML', 'MERISE'],
+      techs: ['MySQL', 'SQL', 'UML','PostgreSQL', 'MERISE'],
     },
     {
       icon: 'lucideWrench',
@@ -64,6 +66,7 @@ export class Stack {
     { icon: 'simpleLaravel', label: 'Laravel' },
     { icon: 'simplePhp', label: 'PHP' },
     { icon: 'simpleMysql', label: 'MySQL' },
+    { icon: 'simplePostgresql', label: 'PostgreSQL' },
     { icon: 'simpleNodedotjs', label: 'Node.js' },
     { icon: 'simpleGit', label: 'Git' },
     { icon: 'simpleGithub', label: 'GitHub' },

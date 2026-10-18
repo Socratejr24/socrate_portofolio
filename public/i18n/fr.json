@@ -8,12 +8,13 @@
     "CONTACT": "Contact"
   },
   "HERO": {
-    "BADGE": "Disponible pour missions",
+    "BADGE": "Disponible pour vos missions",
     "GREETING": "Salut, je suis",
     "NAME": "Ackadie Kouaho Jean-Dylane",
     "DESCRIPTION": "Développeur Full Stack Junior, diplômé d'une Licence en Informatique, passionné par la conception d'applications web modernes et performantes.",
     "CTA_PROJECTS": "Voir mes projets",
     "CTA_CONTACT": "Me contacter",
+    "DOWNLOAD_CV": "Télécharger CV",
     "SCROLL": "Défiler vers le bas"
   },
   "STACK": {
@@ -51,6 +52,7 @@
       "LARAVEL": "Framework PHP élégant qui accélère le développement backend avec une syntaxe expressive et des outils puissants (Eloquent, Artisan, queues...).",
       "PHP": "Langage backend éprouvé, massivement utilisé sur le web, parfait pour construire des APIs et des applications dynamiques.",
       "MYSQL": "Système de gestion de base de données relationnelle fiable et performant, adapté à toutes sortes de projets web.",
+      "POSTGRESQL": "Système de gestion de base de données relationnelle open-source, robuste et puissant, idéal pour les applications modernes exigeantes.",
       "TAILWIND": "Framework CSS utility-first qui permet de créer des interfaces modernes et responsives sans quitter le HTML.",
       "REACT": "Bibliothèque JavaScript de Meta pour créer des interfaces interactives basées sur des composants réutilisables.",
       "GIT": "Outils essentiels de versioning et de collaboration pour travailler proprement en équipe et suivre chaque évolution du code."

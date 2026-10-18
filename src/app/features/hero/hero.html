@@ -27,6 +27,7 @@
     <div class="flex flex-col items-start gap-6">
       <!-- Badge "Disponible" -->
       <div
+        appReveal
         class="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)]
                bg-[var(--color-surface)] px-4 py-1.5 text-sm font-medium
                text-[var(--color-text-muted)]"
@@ -42,7 +43,7 @@
       </div>
 
       <!-- Salutation + Nom -->
-      <div>
+      <div appReveal [appRevealDelay]="100">
         <p class="text-lg font-medium text-[var(--color-text-muted)]">
           {{ 'HERO.GREETING' | translate }}
         </p>
@@ -56,6 +57,8 @@
 
       <!-- Typing effect -->
       <div
+        appReveal
+        [appRevealDelay]="200"
         class="text-2xl font-bold text-[var(--color-primary)] sm:text-3xl lg:text-4xl
                min-h-[2.5rem]"
       >
@@ -64,63 +67,82 @@
 
       <!-- Description -->
       <p
+        appReveal
+        [appRevealDelay]="300"
         class="max-w-xl text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg"
       >
         {{ 'HERO.DESCRIPTION' | translate }}
       </p>
 
-      <!-- CTA Buttons -->
-      <div class="flex flex-wrap items-center gap-4">
-        <a
-          href="#projects"
-          class="group inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary)]
-                 px-6 py-3 text-sm font-semibold text-white transition
-                 hover:bg-[var(--color-primary-hover)]"
-        >
-          {{ 'HERO.CTA_PROJECTS' | translate }}
-          <ng-icon
-            name="lucideArrowRight"
-            size="18"
-            class="transition-transform group-hover:translate-x-1"
-          />
-        </a>
+    <!-- CTA Buttons -->
+<div appReveal [appRevealDelay]="400" class="flex flex-wrap items-center gap-4">
+  <a
+    href="#projects"
+    class="group inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary)]
+           px-6 py-3 text-sm font-semibold text-white transition
+           hover:bg-[var(--color-primary-hover)]"
+  >
+    {{ 'HERO.CTA_PROJECTS' | translate }}
+    <ng-icon
+      name="lucideArrowRight"
+      size="18"
+      class="transition-transform group-hover:translate-x-1"
+    />
+  </a>
 
-        <a
-          href="#contact"
-          class="inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)]
-                 bg-[var(--color-surface)] px-6 py-3 text-sm font-semibold
-                 text-[var(--color-text)] transition hover:border-[var(--color-primary)]
-                 hover:text-[var(--color-primary)]"
-        >
-          {{ 'HERO.CTA_CONTACT' | translate }}
-        </a>
-      </div>
+  <a
+    href="#contact"
+    class="inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)]
+           bg-[var(--color-surface)] px-6 py-3 text-sm font-semibold
+           text-[var(--color-text)] transition hover:border-[var(--color-primary)]
+           hover:text-[var(--color-primary)]"
+  >
+    {{ 'HERO.CTA_CONTACT' | translate }}
+  </a>
 
-      <!-- Socials -->
-      <div class="flex items-center gap-3 pt-2">
-        @for (social of socials; track social.label) {
-          <a
-            [href]="social.url"
-            target="_blank"
-            rel="noopener noreferrer"
-            [attr.aria-label]="social.label"
-            class="flex h-10 w-10 items-center justify-center rounded-lg border
-                   border-[var(--color-border)] bg-[var(--color-surface)]
-                   text-[var(--color-text-muted)] transition
-                   hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
-          >
-            @if (social.icon === 'lucideLinkedin') {
-              <app-icon-linkedin [size]="18" />
-            } @else {
-              <ng-icon [name]="social.icon" size="18" />
-            }
-          </a>
-        }
-      </div>
+  <a
+    href="/CV_Ackadie_Kouaho_Jean-Dylane.pdf"
+    download
+    class="inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)]
+           bg-[var(--color-surface)] px-6 py-3 text-sm font-semibold
+           text-[var(--color-text)] transition hover:border-[var(--color-primary)]
+           hover:text-[var(--color-primary)]"
+  >
+    <ng-icon name="lucideDownload" size="18" />
+    {{ 'HERO.DOWNLOAD_CV' | translate }}
+  </a>
+</div>
+
+<!-- Socials -->
+<div appReveal [appRevealDelay]="500" class="flex items-center gap-3 pt-2">
+  @for (social of socials; track social.label) {
+    <a
+      [href]="social.url"
+      target="_blank"
+      rel="noopener noreferrer"
+      [attr.aria-label]="social.label"
+      class="flex h-10 w-10 items-center justify-center rounded-lg border
+             border-[var(--color-border)] bg-[var(--color-surface)]
+             text-[var(--color-text-muted)] transition
+             hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+    >
+      @if (social.icon === 'lucideLinkedin') {
+        <app-icon-linkedin [size]="18" />
+      } @else {
+        <ng-icon [name]="social.icon" size="18" />
+      }
+    </a>
+  }
+</div>
     </div>
 
     <!-- === COLONNE DROITE : PHOTO === -->
-    <div class="relative flex justify-center lg:justify-end">
+    <div
+      appReveal
+      appRevealFrom="right"
+      [appRevealDelay]="200"
+      class="relative flex justify-center lg:justify-end"
+    >
       <div class="relative">
         <!-- Cercle décoratif animé -->
         <div
@@ -147,6 +169,8 @@
   <!-- ===== SCROLL INDICATOR ===== -->
   <a
     href="#stack"
+    appReveal
+    [appRevealDelay]="600"
     class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2
            text-[var(--color-text-muted)] transition hover:text-[var(--color-primary)] md:flex"
     [attr.aria-label]="'HERO.SCROLL' | translate"

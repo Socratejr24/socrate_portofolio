@@ -2,6 +2,7 @@ import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { NgIcon } from '@ng-icons/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageService } from '../../core/services/language.service';
+import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 interface Mission {
   titleKey: string;
@@ -20,7 +21,7 @@ interface Experience {
 
 @Component({
   selector: 'app-career',
-  imports: [NgIcon, TranslatePipe],
+  imports: [NgIcon, TranslatePipe, RevealDirective], 
   templateUrl: './career.html',
   styleUrl: './career.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

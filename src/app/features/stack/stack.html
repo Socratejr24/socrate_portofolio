@@ -5,7 +5,7 @@
 >
   <div class="mx-auto max-w-7xl">
     <!-- ===== HEADER ===== -->
-    <div class="mb-16 text-center">
+    <div appReveal class="mb-16 text-center">
       <p class="mb-3 font-mono text-sm font-medium text-[var(--color-primary)]">
         // {{ 'STACK.LABEL' | translate }}
       </p>
@@ -19,8 +19,10 @@
 
     <!-- ===== CATEGORIES GRID ===== -->
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      @for (cat of categories; track cat.titleKey) {
+      @for (cat of categories; track cat.titleKey; let i = $index) {
         <div
+          appReveal
+          [appRevealDelay]="i * 100"
           class="group relative overflow-hidden rounded-xl border border-[var(--color-border)]
                  bg-[var(--color-surface)] p-6 transition
                  hover:-translate-y-1 hover:border-[var(--color-primary)]
@@ -68,37 +70,15 @@
       }
     </div>
 
-<!-- ===== CARTES DÉTAILLÉES ===== -->
-<div class="mt-20">
-  <p class="mb-3 text-center font-mono text-sm font-medium text-[var(--color-primary)]">
-    // {{ 'STACK.CARDS_LABEL' | translate }}
-  </p>
-  <h3 class="mb-10 text-center text-2xl font-bold text-[var(--color-text)] sm:text-3xl">
-    {{ 'STACK.CARDS_TITLE' | translate }}
-  </h3>
-  <app-tech-cards />
-</div>
-
-
-    <!-- ===== BADGES SVG =====
-    <div class="mt-20">
-      <p class="mb-6 text-center text-sm font-medium text-[var(--color-text-muted)]">
-        {{ 'STACK.TECHNOS' | translate }}
+    <!-- ===== CARTES DÉTAILLÉES ===== -->
+    <div appReveal [appRevealDelay]="200" class="mt-20">
+      <p class="mb-3 text-center font-mono text-sm font-medium text-[var(--color-primary)]">
+        // {{ 'STACK.CARDS_LABEL' | translate }}
       </p>
-
-      <div class="flex flex-wrap items-center justify-center gap-3">
-        @for (badge of badges; track badge.label) {
-          <div
-            class="flex items-center gap-2 rounded-lg border border-[var(--color-border)]
-                   bg-[var(--color-surface)] px-3 py-2 text-sm text-[var(--color-text-muted)]
-                   transition hover:border-[var(--color-primary)]
-                   hover:text-[var(--color-primary)]"
-          >
-            <ng-icon [name]="badge.icon" size="18" />
-            <span class="font-medium">{{ badge.label }}</span>
-          </div>
-        }
-      </div>
-    </div> -->
+      <h3 class="mb-10 text-center text-2xl font-bold text-[var(--color-text)] sm:text-3xl">
+        {{ 'STACK.CARDS_TITLE' | translate }}
+      </h3>
+      <app-tech-cards />
+    </div>
   </div>
 </section>
